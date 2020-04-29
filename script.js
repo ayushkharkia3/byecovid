@@ -112,7 +112,7 @@ var modal = document.getElementById("myModal");
 var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
-btn.onclick = function() {
+function modalDisplay() {
     init();
     modal.style.display = "block";
 }
