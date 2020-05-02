@@ -8,14 +8,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ayushkharkia3/shopsnearme.git"
+        "url": "git+https://github.com/ayushkharkia3/byecovid.git"
     },
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/ayushkharkia3/shopsnearme/issues"
+        "url": "https://github.com/ayushkharkia3/byecovid/issues"
     },
-    "homepage": "https://github.com/ayushkharkia3/shopsnearme#readme",
+    "homepage": "https://github.com/ayushkharkia3/byecovid#readme",
     "dependencies": {
         "body-parser": "^1.19.0",
         "ejs": "^3.1.2",
