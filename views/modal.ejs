@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Shops</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="/css/grid.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <main class="fadeIn">
+        <h2>May we know what are you looking at?</h2>
+        <div class="container">
+            <button onclick="information()" class="info">Get information</button>
+            <div class="form-hidden zoomIn">
+                <form action="/" method="POST" id="form-1">
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="pincode">Pincode:</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="number" name="pincode" id="pincode" placeholder="Enter your pincode">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="product">What are you looking for?</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <select name="product" id="product">
+                                <option value="grocery">Grocery Shop</option>
+                                <option value="medical">Medical Shop</option>
+                                <option value="fruitsandvegetables">Fruits and Vegetables Shop</option>
+                                <option value="dairy">Dairy Shop</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="name">Your name?</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="name" id="name" placeholder="Your name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="email">Your email?</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="email" name="email" id="email" placeholder="Your email">
+                        </div>
+                    </div>
+                    <button type="submit" class="button-small submit hidden" id="myBtn">Submit</button>
+                </form>
+            </div>
+            <button onclick="medical()" class="medical">Register as a shop owner</button>
+            <div class="medical-hidden zoomIn">
+                <div class="row">
+                </div>
+                <form action="/register" method="POST" class="medical-form">
+                    <div class="row">
+                        <div class="col span-1-of-2">
+                            <label for="shopname">
+                                What is your shop name?</label>
+                        </div>
+                        <div class="col left span-1-of-2">
+                            <input type="text" name="shopname" id="shopname">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-2">
+                            <label for="type">
+                                What is kind of products you sell?</label>
+                        </div>
+                        <div class="col left span-1-of-2">
+                            <select name="type" id="type">
+                                <option value="grocery">Grocery Shop</option>
+                                <option value="medical">Medical Shop</option>
+                                <option value="fruitsandvegetables">Fruits and Vegetables Shop</option>
+                                <option value="dairy">Dairy Shop</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-2">
+                            <label for="city">
+                                What is your pincode?</label>
+                        </div>
+                        <div class="col left span-1-of-2">
+                            <input type="text" name="city" id="city">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-2">What is your address?
+                            <label for="locality"></label>
+                        </div>
+                        <div class="col left span-1-of-2">
+                            <input type="text" name="locality" id="locality">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-2">
+                            <label for="contact">
+                                What is your phone number?</label>
+                        </div>
+                        <div class="col left span-1-of-2">
+                            <input type="tel" name="contact" id="contact">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button type="submit" class="submit button-small">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <button onclick="help()" class="help">Contribute in this iniative</button>
+            <div class="help-hidden zoomIn">
+                <h3>How can you help us?</h3>
+                <button onclick="spreading()" class="button-small spread">Help in spreading the word</button>
+                <div class="spreading-hidden zoomIn">
+                    <div class="row">
+                        <h4>Kindly share this link in your connection.</h4>
+                    </div>
+                </div>
+                <button onclick="suggestion()" class="button-small suggest">Suggest us.</button>
+                <div class="suggestion-hidden zoomIn">
+                    <div class="row">
+                        <h4>Hey, It will be a great motivation for us if you give suggestions or feedback.</h4>
+                    </div>
+                    <form action="/suggest" method="POST">
+                        <div class="row">
+                            <div class="col span-1-of-3">
+                                <label for="suggestion">Your suggestion:</label>
+                            </div>
+                            <div class="col span-2-of-3">
+                                <textarea name="suggestion" placeholder="Your suggestion." id="suggestion" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button class="button-small submit" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="end">
+            Developed by <a href="https://www.linkedin.com/in/ayushkharkia" target="_blank">Ayush Kharkia</a>
+        </div>
+    </main>
+    <section>
+        <div id="myModal" class="modal fadeIn" style="display: block;">
+            <div class="modal-content">
+                <div class="header">
+                    <div class="heading">
+                        Your Search Results
+                    </div>
+                    <div class="cross">
+                        <span class="close">&times;</span>
+                    </div>
+                </div>
+                <% shops.forEach(e=>{ %>
+                    <div class="cardbox">
+                        <div class="image">
+                            <img src="/img/<%= e.type %>.png" alt="Mask">
+                        </div>
+                        <div class="content-box">
+                            <div class="shop-name">
+                                <%= e.shopName %>
+                            </div>
+                            <div class="address">
+                                <%= e.address %>
+                            </div>
+                            <div class="mobile-no">
+                                <img src="https://img.icons8.com/ios-glyphs/30/000000/contact-card.png" />
+                                <%= e.contact %>
+                            </div>
+                            <% if(e.type == 'fruitsandvegetables'){ %>
+                                <div class="masks" style="font-size: 13px;">
+                                    Category: Fruits and Vegetables
+                                </div>
+                                <%} else {%>
+                                    <div class="masks">
+                                        Category:
+                                        <%= e.type %>
+                                    </div>
+                                    <% } %>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+    </section>
+    <script src="/js/script.js"></script>
+    <script>
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        document.querySelector('.hidden').addEventListener('click', (e) => {
+            document.getElementById('form-1').submit();
+        })
+    </script>
+</body>
+
+</html>
